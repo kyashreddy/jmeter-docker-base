@@ -11,6 +11,7 @@ RUN apt-get clean && \
 			unzip
 #Install vim and curl for debugging
 RUN apt-get -qy install vim
+RUN apt-get -qy install curl
 
 # Install jmeter
 RUN mkdir /jmeter \
