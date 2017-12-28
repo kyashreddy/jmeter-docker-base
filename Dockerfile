@@ -1,7 +1,7 @@
 FROM ubuntu:17.10
 
 ENV EXTRAS_LIBS_SET_VERSION=1.4.0
-ENV JMETER_VERSION=3.2
+ENV JMETER_VERSION=3.3
 
 # Install wger & JRE
 RUN apt-get clean && \
@@ -10,8 +10,7 @@ RUN apt-get clean && \
 			default-jre-headless \
 			unzip
 #Install vim and curl for debugging
-RUN apt-get -qy install vim
-RUN apt-get -qy install curl
+RUN apt-get -qy install vim curl
 
 # Install jmeter
 RUN mkdir /jmeter \
