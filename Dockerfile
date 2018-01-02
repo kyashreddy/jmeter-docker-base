@@ -22,7 +22,7 @@ RUN mkdir /jmeter \
 	&& rm JMeterPlugins-ExtrasLibs-${EXTRAS_LIBS_SET_VERSION}.zip
 
 # Set Jmeter Home
-ENV JMETER_HOME /jmeter/apache-jmeter-3.2/
+ENV JMETER_HOME /jmeter/apache-jmeter-${JMETER_VERSION}/
 
 # Add Jmeter to the Path
 ENV PATH $JMETER_HOME/bin:$PATH
