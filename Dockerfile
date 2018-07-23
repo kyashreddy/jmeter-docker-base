@@ -1,7 +1,7 @@
 FROM ubuntu:17.10
 
 ENV EXTRAS_LIBS_SET_VERSION=1.4.0
-ENV JMETER_VERSION=3.3
+ENV JMETER_VERSION=4.0
 
 #Install vim and curl for debugging
 RUN apt-get update && apt-get install -qy cron vim curl
