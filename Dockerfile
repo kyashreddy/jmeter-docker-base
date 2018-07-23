@@ -1,6 +1,5 @@
 FROM ubuntu:17.10
 
-ENV EXTRAS_LIBS_SET_VERSION=1.4.0
 ENV JMETER_VERSION=4.0
 
 #Install vim and curl for debugging
@@ -16,10 +15,7 @@ RUN mkdir /jmeter \
 	&& cd /jmeter/ \
 	&& wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz \
 	&& tar -xzf apache-jmeter-${JMETER_VERSION}.tgz \
-	&& rm apache-jmeter-${JMETER_VERSION}.tgz \
-	&& wget https://jmeter-plugins.org/downloads/file/JMeterPlugins-ExtrasLibs-${EXTRAS_LIBS_SET_VERSION}.zip \
-	&& unzip -o JMeterPlugins-ExtrasLibs-${EXTRAS_LIBS_SET_VERSION}.zip -d /jmeter/apache-jmeter-${JMETER_VERSION}/ \
-	&& rm JMeterPlugins-ExtrasLibs-${EXTRAS_LIBS_SET_VERSION}.zip
+	&& rm apache-jmeter-${JMETER_VERSION}.tgz
 
 # Set Jmeter Home
 ENV JMETER_HOME /jmeter/apache-jmeter-${JMETER_VERSION}
