@@ -3,7 +3,7 @@ FROM ubuntu:17.10
 ENV JMETER_VERSION=4.0
 
 #Install vim and curl for debugging
-RUN apt-get update && apt-get install -qy cron vim curl
+RUN apt-get update && apt-get install -qy cron vim curl iputils-ping
 # Install wger & JRE
 RUN apt-get clean && \
 	apt-get update && \
