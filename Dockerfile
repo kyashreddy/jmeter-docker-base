@@ -31,4 +31,3 @@ RUN rm -rf ${JMETER_HOME}/bin/examples \
 			apt-get -y --purge autoremove && \
 			apt-get -y clean && \
 			rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-ENTRYPOINT /bin/bash
