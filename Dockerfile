@@ -1,5 +1,5 @@
 FROM ubuntu:18.04
-MAINTAINER  Yashwanth Reddy<yashwanthkreddy@gmail.com>
+LABEL  maintainer.name="Yashwanth Reddy" maintainer.email="yashwanthkreddy@gmail.com"
 
 ARG JMETER_VERSION=5.1.1
 
