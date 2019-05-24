@@ -1,4 +1,5 @@
 FROM ubuntu:18.04
+MAINTAINER  Yashwanth Reddy<yashwanthkreddy@gmail.com>
 
 ARG JMETER_VERSION=5.1.1
 
