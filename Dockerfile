@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-ENV JMETER_VERSION=5.1..1
+ENV JMETER_VERSION=5.1.1
 
 #Install vim and curl for debugging
 RUN apt-get update && apt-get install -qy cron vim curl iputils-ping && apt-get clean
