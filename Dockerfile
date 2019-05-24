@@ -1,15 +1,13 @@
-FROM ubuntu:19.04
+FROM ubuntu:18.04
 
-ENV JMETER_VERSION=5.1
+ENV JMETER_VERSION=5.1..1
 
 #Install vim and curl for debugging
-RUN apt-get update && apt-get install -qy cron vim curl iputils-ping
-# Install wger & JRE
-RUN apt-get clean && \
-	apt-get update && \
-	apt-get -qy install wget \
-			default-jre-headless \
-			unzip
+RUN apt-get update && apt-get install -qy cron vim curl iputils-ping && apt-get clean
+# Install JRE, unzip and wget
+RUN apt-get update && \
+	apt-get -qy install default-jre-headless unzip wget && \
+	apt-get clean
 # Install jmeter
 RUN mkdir /jmeter \
 	&& cd /jmeter/ \
@@ -33,3 +31,4 @@ RUN rm -rf ${JMETER_HOME}/bin/examples \
 			apt-get -y --purge autoremove && \
 			apt-get -y clean && \
 			rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+ENTRYPOINT /bin/bash
