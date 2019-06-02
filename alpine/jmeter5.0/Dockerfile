@@ -1,15 +1,13 @@
 FROM alpine:3.9
 LABEL  maintainer.name="Yashwanth Reddy" maintainer.email="yashwanthkreddy@gmail.com"
 
+ARG JMETER_VERSION=5.0
 
-ENV JMETER_VERSION=5.0
-
-RUN    apk update \
+RUN apk update \
 	&& apk upgrade \
-	&& apk add ca-certificates \
+	&& apk add --no-cache ca-certificates \
 	&& update-ca-certificates \
-	&& apk add --update bash curl openjdk8-jre unzip vim \
-	&& apk add --no-cache nss \
+	&& apk add --no-cache --update bash curl nss openjdk8-jre unzip vim \
 	&& rm -rf /var/cache/apk/* \
 	&& mkdir -p /jmeter  \
 	&& curl -L --silent https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz >  /jmeter/apache-jmeter-${JMETER_VERSION}.tgz  \
