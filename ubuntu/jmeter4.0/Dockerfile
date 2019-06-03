@@ -8,9 +8,9 @@ RUN apt-get update && apt-get install -qy cron vim curl iputils-ping && apt-get 
 
 # Install JRE, unzip and wget
 RUN apt-get update \
-	&& apt-get -qy install default-jre-headless unzip wget && \
+	&& apt-get -qy install default-jre-headless unzip wget \
 	&& apt-get clean \
-    && mkdir /jmeter \
+        && mkdir /jmeter \
 	&& cd /jmeter/ \
 	&& wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz \
 	&& tar -xzf apache-jmeter-${JMETER_VERSION}.tgz \
