@@ -4,7 +4,7 @@ LABEL  maintainer.name="Kudumula Yashwanth Reddy" maintainer.email="yashwanthkre
 ARG JMETER_VERSION=5.5
 
 #Install cron, curl, ping and vim  utils
-RUN apt-get update && apt-get install -qy cron vim curl iputils-ping && apt-get clean
+RUN apt-get update && apt-get install -qy cron vim curl apache2 iputils-ping && apt-get clean
 
 # Install JRE, Jmeter and some cleanup
 RUN apt-get update  \
